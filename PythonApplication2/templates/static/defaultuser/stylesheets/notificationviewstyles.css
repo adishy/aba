@@ -1,0 +1,41 @@
+#someelementprovided{
+	position: absolute;
+	z-index: 80;
+}
+
+.notificationbox{
+		max-width: 350px;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		margin: auto;
+		margin-bottom: 24px;
+		display: block;
+		position: fixed;
+		z-index: 80;
+		transition: all 0.2s linear;	
+	}
+	
+.notificationtext{
+	padding: 9px;
+	display: grid;
+	grid-template-columns: 1fr 14fr;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background: #212b3a;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	word-wrap: break-word;
+	text-align: left;
+	color: #ececec;
+	-webkit-box-shadow: -1px 1px 47px 0px rgba(0,0,0,0.18);
+	-moz-box-shadow: -1px 1px 47px 0px rgba(0,0,0,0.18);
+	box-shadow: -1px 1px 47px 0px rgba(0,0,0,0.18);
+	transition: all 0.2s linear;	
+}
+
+.notificationtext span{
+	padding-left: 3px;
+	text-align: left;
+	max-width: 300px;
+}

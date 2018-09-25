@@ -1,0 +1,346 @@
+	<!DOCTYPE html>
+<html>
+  <head>
+	<title>ABA Help Desk</title>
+
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+	<link rel="apple-touch-icon" sizes="57x57" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-57x57.png">
+
+	<link rel="apple-touch-icon" sizes="60x60" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-60x60.png">
+	
+	<link rel="apple-touch-icon" sizes="72x72" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-72x72.png">
+	
+	<link rel="apple-touch-icon" sizes="76x76" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-76x76.png">
+	
+	<link rel="apple-touch-icon" sizes="114x114" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-114x114.png">
+	
+	<link rel="apple-touch-icon" sizes="120x120" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-120x120.png">
+	
+	<link rel="apple-touch-icon" sizes="144x144" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-144x144.png">
+	
+	<link rel="apple-touch-icon" sizes="152x152" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-152x152.png">
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-180x180.png">
+	
+	<link rel="icon" type="image/png" sizes="192x192"  href="{{static_files_host}}/{{favicon_files_url}}/android-icon-192x192.png">
+	
+	<link rel="icon" type="image/png" sizes="32x32" href="{{static_files_host}}/{{favicon_files_url}}/favicon-32x32.png">
+	
+	<link rel="icon" type="image/png" sizes="96x96" href="{{static_files_host}}/{{favicon_files_url}}/favicon-96x96.png">
+	
+	<link rel="icon" type="image/png" sizes="16x16" href="{{static_files_host}}/{{favicon_files_url}}/favicon-16x16.png">
+	
+	<link rel="manifest" href="{{static_files_host}}/{{favicon_files_url}}/manifest.json">
+	
+	<meta name="msapplication-TileColor" content="#ffffff">
+	
+	<meta name="msapplication-TileImage" content="{{static_files_host}}/{{favicon_files_url}}/ms-icon-144x144.png">
+	
+	<meta name="theme-color" content="#ffffff">
+
+	<!--Font stylesheets-->
+		<!--Title font: Raleway (URL: https://fonts.google.com/specimen/Raleway, CDN: Google Fonts)-->
+		<link href="{{title_font_css_url}}" rel="stylesheet" type="text/css"/>
+		<!--Main font: Roboto (URL: https://fonts.google.com/specimen/Roboto, CDN: Google Fonts)-->
+		<link href="{{main_font_css_url}}" rel="stylesheet" type"text/css"/>
+
+	<!--Animate.css (URL: https://github.com/daneden/animate.css/, CDN: cdnjs)-->
+	<link href="{{animations_css_url}}" rel="stylesheet" type"text/css"/>
+
+	<!--Font Awesome (URL: https://fontawesome.com, CDN: use.fontawesome.com)-->
+	<link rel="stylesheet" href="{{icons_css_url}}" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	
+	<!--SocketIO (URL: https://socket.io, CDN: cdnjs)-->
+	<script type="text/javascript" src="{{networking_script_url}}"></script>
+
+	<!--Google API (URL: https://developers.google.com/identity/sign-in/web/sign-in, CDN: apis.google.com)-->
+	<script type"text/javascript" src="{{google_api_script_url}}"></script>
+	
+	<!--Google Client URL-->
+	<meta name="google-signin-client_id" content="{{google_client_url}}">
+	
+	<!--Siema JS (Responsive slider, URL: https://github.com/pawelgrzybek/siema)-->
+	<script type="text/javascript" src="{{static_files_host + '/' + responsive_slider_url}}"></script>
+
+	<!--Main Desktop Stylesheet (min-width: 768px)-->
+	<link href="{{static_files_host + '/' + main_desktop_css_url}}" rel="stylesheet" type="text/css"/> 
+
+	<!--Main Mobile Stylesheet (max-width: 767px)-->
+	<link href="{{static_files_host + '/' + main_mobile_css_url}}" rel="stylesheet" type="text/css">
+	
+	<!--Notifications Stylesheet-->
+	<link href="{{static_files_host + '/' + notifications_css_url}}" rel="stylesheet" type="text/css"/>
+	
+	<!--Google Sign In, User profiles-->
+	<script type="text/javascript" src="{{static_files_host + '/' + google_sign_in_script}}"></script>
+	
+	<!--Support Tickets: Displays and modifies support tickets in three columns on the page-->
+	<script type="text/javascript" src="{{static_files_host + '/' + supporttickets_script}}"></script>
+	
+	<!--Support Ticket Details View: Displays all details of the support ticket and provides actions-->
+	<script type="text/javascript" src="{{static_files_host + '/' + supportticketdetails_script}}"></script>
+	
+	<!--Clipboard action: Copies support ticket details to clipboard-->
+	<script type="text/javascript" src="{{static_files_host + '/' + copy_to_clipboard_script}}"></script>
+	
+	<!--Notification action: Displays notifications about events for the current user-->
+	<script type="text/javascript" src="{{static_files_host + '/' + notifications_script}}"></script>
+	
+	<!--New support ticket action: Adds a new support ticket for the user-->
+	<script type="text/javascript" src="{{static_files_host + '/' + new_support_ticket_script}}"></script>
+	
+	<!--Socket events: Calls various functions based on socket events provided-->
+	<script type="text/javascript" src="{{static_files_host + '/' + socket_events_script}}"></script>
+  </head>
+  <body>
+	
+	<navigation>		
+		<i class="fas fa-bars fa-lg navigationmenupicture" onclick="toggleOption(document.querySelector('.sidebar'), showSidebar); "></i>
+				
+		<div class="navigation_element element_left">
+			<div class="logo">
+				<img src="{{static_files_host + '/' + main_ABA_logo}}" draggable="false">
+			</div>
+			<div class ="logo_text">
+				<p>Help Desk</p>
+			</div>
+		</div>
+		
+		<div class="navigation_element element_center">
+			<div class="search_box">
+				<div class="search_indicator">
+					<i class="fas fa-search"></i>
+				</div>
+				<div class="search_input">
+					<input type="text" class="searchboxvalue" placeholder="Search for issues you have reported"/>
+				</div>
+			</div>
+		</div>
+		
+		<div class="navigation_element element_right">
+			<div class="user_image_display currentuserimage" onclick="showuserdetails(event);">
+				<i id="notificationbuttonpictureview" class="far fa-bell fa-lg user_notification_button"></i>
+				<div class="unseennotificationview">
+				</div>
+			</div>
+			<div class="searchresultclosebox">
+				<i class="fas fa-times searchresultclose"></i>
+			</div>
+		</div>
+		
+		<div id="currentuserbox" class="currentuserdisplay hidden">
+			<div id="currentuserimageelement" class="userpictureview currentuserimage">
+			</div>
+			
+			<div class="usernameview">
+				<p id ="currentusernameelement" class="currentusername"></p>
+				<p id="currentuseremailelement" class="currentuseremail"></p>
+			</div>
+			
+			<div class="logoutview">
+				<div class="logoutbutton" onclick="logoutCurrentUser();">
+					<p>LOGOUT</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="usernotificationview">
+		</div>
+	</navigation>
+					
+	<div class="displaycontent">
+		<div class="sidebar">
+			<div class="sidebar_element_top sidebarspace">
+			</div>
+			<div class="sidebar_menu">
+				<div class="new_ticket">
+				
+					<div class="new_ticket_picture">
+						<i class="fas fa-plus-circle"></i>
+					</div>
+					<div class="new_ticket_text" onclick="toggleHidden(SUPPORT_TICKET_ENTRY); newsupportticketbox.getCSRFID();">
+						<p>NEW TICKET</p>
+					</div>
+				</div>
+				<div class="sidebar_menu_item first_menu_item active_menu_item">
+					<div class="sidebar_menu_item_picture">
+						<i class="fas fa-ticket-alt fa-lg"></i>
+					</div>
+					<div class="sidebar_menu_item_text">
+						<p>Support Tickets</p>
+					</div>
+				</div>
+				
+				<div class="sidebar_menu_item">
+					<div class="sidebar_menu_item_picture">
+						<i class="fas fa-info-circle fa-lg"></i>
+					</div>
+					<div class="sidebar_menu_item_text">
+						<p>About</p>
+					</div>
+				</div>
+				
+				<div class="sidebar_menu_item">
+					<div class="sidebar_menu_item_picture">
+						<i class="fas fa-users fa-lg"></i>
+					</div>
+					<div class="sidebar_menu_item_text">
+						<p>Help Desk Staff</p>
+					</div>
+				</div>
+				
+				<!--div class="sidebar_menu_item">
+					<div class="sidebar_menu_item_picture">
+						<i class="fas fa-comment fa-lg"></i>
+					</div>
+					<div class="sidebar_menu_item_text">
+						<p>Feedback</p>
+					</div>
+				</div-->
+			</div>
+		</div>
+		
+		<div id="newsupportticket" class="expanddetailsoverlaybox">
+		</div>
+		
+		
+		<div class="columntitles">
+			<div class="column_title ongoing_support_tickets_title column_selected" onclick="showSupportTickets('ongoing')">
+					<p>ONGOING</p>
+			</div>
+			
+			<div class="column_title delayed_support_tickets_title column_not_active" onclick="showSupportTickets('delayed')">
+					<p>ON HOLD</p>
+			</div>
+			<div class="column_title complete_support_tickets_title column_not_active" onclick="showSupportTickets('complete')">
+					<p>COMPLETED</p>
+			</div>
+		</div>
+
+		<div id="supportticketsview" class="supporttickets mainsupporttickets">
+				<div class="ongoing">
+					<div class="sidebar_element_top">
+					</div>
+					<div class="column_title columntitleview">
+						<p>ONGOING</p>
+					</div>
+					<div id="ongoingticketviewbox" class="ticketviewbox">
+					</div>
+				</div>
+					
+				<div class="delayed">				
+					<div class="sidebar_element_top">
+					</div>
+					<div class="column_title columntitleview">
+						<p>ON HOLD</p>
+					</div>
+					<div id="delayedticketviewbox" class="ticketviewbox">
+					</div>
+				</div>
+				
+				<div class="completed">
+					<div class="sidebar_element_top">
+					</div>
+					<div class="column_title columntitleview">
+						<p>COMPLETED</p>
+					</div>
+					<div id="completeticketviewbox" class="ticketviewbox">
+					</div>
+				</div>
+		</div>
+
+		<div class="supporttickets">
+			<div class="aboutlistbox">
+				<p class="helpdeskstafftitle">ABOUT ABA HELPDESK</p>
+				<a href="http://aba-helpdesk.gitbook.io" target="_blank">
+					<div class="aboutview">
+						<p class="aboutviewtitletext">User Documentation</p>
+						<p class="aboutviewdescriptiontext">How-to guides and other documentation on how to use the Help Desk System</p>	
+					</div>
+				</a>
+				<a href="http://aba-helpdesk.gitbook.io" target="_blank">
+					<div class="aboutview">
+						<p class="aboutviewtitletext">System Documentation</p>
+						<p class="aboutviewdescriptiontext">Release notes on the current version of the Help Desk System</p>	
+					</div>
+				</a>
+			</div>
+		</div>
+		
+		<div class="supporttickets">
+			<div>
+				<div class="sidebar_element_top">
+				</div>
+				<p class="helpdeskstafftitle">HELP DESK STAFF</p>
+
+				<div id="supportstaffmemberdetails">
+				</div>
+			</div>
+		</div>
+
+		<div class="searchresultbox hidden">
+			<div class="sidebar_element_top">
+			</div>
+			<div class="searchresultview">
+			</div>
+		</div>
+		
+		<div class="newsupportticket">
+			<i class="fas fa-plus fa-lg newsupportticketbuttonpicture" onclick="toggleHidden(SUPPORT_TICKET_ENTRY)"></i>
+		</div>
+	</div>
+	
+	
+	<div id="optionbackground" onclick="toggleOption(ACTIVE_OPTION, showSidebar); ">
+	</div>
+	
+	<div id="someelementprovided">
+	</div>
+	
+	<div id="supportticketdetailsbox" class="issueexpandviewbox">
+	</div>
+
+	<!--Page functions: Functions for loading support tickets and UI helpers-->
+	<script src="{{static_files_host + '/' + page_functions_script}}"></script>
+	
+	<!--Page setup: Sets up the page and adds listeners-->
+	<script src="{{static_files_host + '/' + page_setup_script}}"></script>
+	
+	<!--Support staff action: Displays details of the support staff-->
+	<script src="{{static_files_host + '/' + support_staff_display_script}}"></script>
+	
+	<!--Support ticket user search: Searches support tickets reported by the user-->
+	<script src="{{static_files_host + '/' + support_ticket_user_search}}"></script>
+</html>
+
+<!--
+Support Area
+
+Printer
+Projector
+Dell Laptop
+Macbook
+iPad
+Internet
+iSAMS
+Google
+Microsoft Office 365
+Lost/Damaged (fill and sign form, admin)
+
+Andrews David (Network, Internet, iSAMS, Google)
+Ejaz Qureshi (iSAMS, Google, Printer, PC (Desktops), Dell, Internet) - primary support to secondary (locations with s)
+Ghaliya Khamis  (iPad, MacBook, Printer, Projector)  - primary support to elementary (locations with e)
+
+
+Projector
+	No display
+
+Printer
+	Additonal print quota (to admin)
+
+iSAMS / Google / Microsoft
+	Password reset
+
+
+-->

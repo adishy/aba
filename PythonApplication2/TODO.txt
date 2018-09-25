@@ -1,0 +1,74 @@
+login.html
+    Loading bar
+    Error display
+
+mainview.html
+    About
+    Feedback
+    Actions menu
+    Mobile page
+        ABA logo
+        Search 
+        Notification panel
+        Sidebar
+        New support ticket view
+    Switching from mobile to desktop display error
+    Search bar
+
+mainviewadmin.html
+    remove status change for common queue
+    notifications
+    completed tickets changed to ongoing
+    supportticketchanges scroll
+    supportticketchanges
+    button width completed tickets
+    support description add reset input 
+    support staff add reset input
+    add current day support ticket view
+    filter by reset on load
+
+    
+
+mainviewadmin, mainviewstaff 
+    mainviewstaff search
+    split source css, js
+    supporttickettexttemplate
+    error display
+    location assignment
+
+assignment 
+    exceptions and or overrides
+    empty id 
+
+mainview
+    cancel support tickets notification
+    about
+    mobile sidebar show
+    arrange support tickets by last updated
+    completed loading  
+    error display
+    error could not cancel ticket
+
+    limit number of tickets displayed, number of notifications displayed
+    
+create support ticket history
+
+fix group notifications
+
+fix notifications
+
+fix quick menu
+
+fix it administrator text in support staff box
+
+fix filter by for search
+
+fix details for all support tickets
+
+add assign
+
+add overrides
+
+add all support staff view
+
+add email address and password to database

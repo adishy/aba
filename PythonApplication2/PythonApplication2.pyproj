@@ -1,0 +1,90 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>1d774652-5af9-4554-b9bf-dd2b866ee08d</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>mainview.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>PythonApplication2</Name>
+    <RootNamespace>PythonApplication2</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>Global|PythonCore|3.6-32</InterpreterId>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="booleanExpressionResult.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="constKeys.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="databaseStorageList.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dataLists.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dataModels.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="flaskSession.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="helpDeskRouteHelpers.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mainHelpDeskRoutes.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mainview.py" />
+    <Compile Include="OAuthLoginChecking.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="routeEventsManager.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="socketHelpDeskRoutes.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="supportStaffData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="supportTicketChanges.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="supportTicketData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="supportTicketEmails.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="supportType.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.6-32" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

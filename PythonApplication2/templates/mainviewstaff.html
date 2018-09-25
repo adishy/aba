@@ -1,0 +1,1850 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		
+		<title>ABA Help Desk | Support Staff</title>
+
+		<link rel="apple-touch-icon" sizes="57x57" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-57x57.png">
+
+		<link rel="apple-touch-icon" sizes="60x60" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-60x60.png">
+		
+		<link rel="apple-touch-icon" sizes="72x72" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-72x72.png">
+		
+		<link rel="apple-touch-icon" sizes="76x76" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-76x76.png">
+		
+		<link rel="apple-touch-icon" sizes="114x114" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-114x114.png">
+		
+		<link rel="apple-touch-icon" sizes="120x120" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-120x120.png">
+		
+		<link rel="apple-touch-icon" sizes="144x144" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-144x144.png">
+		
+		<link rel="apple-touch-icon" sizes="152x152" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-152x152.png">
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="{{static_files_host}}/{{favicon_files_url}}/apple-icon-180x180.png">
+		
+		<link rel="icon" type="image/png" sizes="192x192"  href="{{static_files_host}}/{{favicon_files_url}}/android-icon-192x192.png">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="{{static_files_host}}/{{favicon_files_url}}/favicon-32x32.png">
+		
+		<link rel="icon" type="image/png" sizes="96x96" href="{{static_files_host}}/{{favicon_files_url}}/favicon-96x96.png">
+		
+		<link rel="icon" type="image/png" sizes="16x16" href="{{static_files_host}}/{{favicon_files_url}}/favicon-16x16.png">
+		
+		<link rel="manifest" href="{{static_files_host}}/{{favicon_files_url}}/manifest.json">
+		
+		<meta name="msapplication-TileColor" content="#ffffff">
+		
+		<meta name="msapplication-TileImage" content="{{static_files_host}}/{{favicon_files_url}}/ms-icon-144x144.png">
+		
+		<meta name="theme-color" content="#ffffff">
+
+	<!--Font stylesheets-->
+		<!--Title font: Raleway (URL: https://fonts.google.com/specimen/Raleway, CDN: Google Fonts)-->
+		<link href="{{title_font_css_url}}" rel="stylesheet" type="text/css"/>
+		<!--Main font: Roboto (URL: https://fonts.google.com/specimen/Roboto, CDN: Google Fonts)-->
+		<link href="{{main_font_css_url}}" rel="stylesheet" type"text/css"/>
+
+	<!--Animate.css (URL: https://github.com/daneden/animate.css/, CDN: cdnjs)-->
+	<link href="{{animations_css_url}}" rel="stylesheet" type"text/css"/>
+
+	<!--Font Awesome (URL: https://fontawesome.com, CDN: use.fontawesome.com)-->
+	<link rel="stylesheet" href="{{icons_css_url}}" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	
+	<!--SocketIO (URL: https://socket.io, CDN: cdnjs)-->
+	<script type="text/javascript" src="{{networking_script_url}}"></script>
+
+	<!--Google API (URL: https://developers.google.com/identity/sign-in/web/sign-in, CDN: apis.google.com)-->
+	<script type"text/javascript" src="{{google_api_script_url}}"></script>
+	
+	<!--Google Client URL-->
+	<meta name="google-signin-client_id" content="{{google_client_url}}">
+	
+	<!--Notifications Stylesheet-->
+	<link href="{{static_files_host + '/' + notifications_css_url}}" rel="stylesheet" type="text/css"/>
+	
+	<!--Google Sign In, User profiles-->
+	<script type="text/javascript" src="{{static_files_host + '/' + google_sign_in_script}}"></script>
+	
+	<!--Support Tickets: Displays and modifies support tickets in three columns on the page-->
+	<script type="text/javascript" src="{{static_files_host + '/' + supporttickets_script}}"></script>
+	
+	<!--Clipboard action: Copies support ticket details to clipboard-->
+	<script type="text/javascript" src="{{static_files_host + '/' + copy_to_clipboard_script}}"></script>
+	
+	<!--Notification action: Displays notifications about events for the current user-->
+	<script type="text/javascript" src="{{static_files_host + '/' + notifications_script}}"></script>
+	
+	<!--New support ticket action: Adds a new support ticket for the user-->
+	<script type="text/javascript" src="{{static_files_host + '/' + new_support_ticket_script}}"></script>
+
+	<!--Main Desktop Support Staff Stylesheet (min-width: 768px)-->
+	<link type="text/css" rel="stylesheet" href="{{static_files_host + '/' + main_desktop_supportstaff_css_url}}">
+	
+	<!--Filesaver.js (URL: https://github.com/eligrey/FileSaver.js/)-->
+	<script type="text/javascript" src="{{static_files_host + '/' + filesave_script}}"></script>
+	
+	<!--Sheet JS (URL: https://github.com/SheetJS/js-xlsx, CDN: https://cdnjs.cloudflare.com/)-->
+	<script type="text/javascript" src="{{excel_csv_data_formatter_script}}"></script>
+	
+	<!--Chart JS (URL: https://www.chartjs.org/, CDN: https://cdnjs.cloudflare.com/)-->
+	<script type="text/javascript" src="{{chart_data_formatter_script}}"></script>
+	
+	</head>
+	
+	<body>
+		<navigation>
+			
+			<!--LOGO-->
+			<div class="navigation_element element_left">
+				<div class="logo">
+					<img src="http://localhost/mainABAlogo.PNG" draggable="false">
+				</div>
+				<div class ="logo_text">
+					<p>Help Desk</p>
+				</div>
+			</div>
+			
+			
+				<div class="navigation_element element_center">
+					<div class="supportinputsearchview">
+						<i class="fas fa-search"></i>
+						<input type="text" id="supportticketsearchvalue" class="supportlocationssearch" placeholder="Search for support tickets"/>
+					</div>
+				</div>
+			
+			<!--USER PICTURE-->
+			<div class="navigation_element element_right">
+				<div class="user_image_display currentuserimage" onclick="showuserdetails(event);">
+					<i id="notificationbuttonpictureview" class="far fa-bell fa-lg user_notification_button"></i>
+					<div class="unseennotificationview">
+					</div>
+				</div>
+				<div class="searchresultclosebox hidden">
+					<i class="fas fa-times searchresultclose"></i>
+				</div>
+			</div>
+			
+			<div id="currentuserbox" class="currentuserdisplay hidden">
+				<div id="currentuserimageelement" class="userpictureview currentuserimage">
+				</div>
+				
+				<div class="usernameview">
+					<p id ="currentusernameelement" class="currentusername"></p>
+					<p id="currentuseremailelement" class="currentuseremail"></p>
+				</div>
+				
+				<div class="logoutview">
+					<div class="logoutbutton" onclick="window.location.href = '/logout'">
+						<p>LOGOUT</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="usernotificationview">
+			</div>
+		</navigation>
+		
+		<div class="displaycontent">
+			<div class="sidebar">
+				<div class="sidebar_element_top">
+				</div>
+				<div class="sidebar_menu">
+					<div class="new_ticket">
+						<div class="new_ticket_picture">
+							<i class="fas fa-plus-circle"></i>
+						</div>
+						<div class="new_ticket_text">
+							<p>CREATE TICKET</p>
+						</div>
+					</div>
+					<div class="sidebar_menu_item first_menu_item active_menu_item">
+						<div class="sidebar_menu_item_picture">
+							<i class="fas fa-ticket-alt fa-lg"></i>
+						</div>
+						<div class="sidebar_menu_item_text">
+							<p>Current Tickets</p>
+						</div>
+					</div>
+					
+					<div class="sidebar_menu_item">
+						<div class="sidebar_menu_item_picture">
+							<i class="fas fa-check-circle fa-lg"></i>
+						</div>
+						<div class="sidebar_menu_item_text">
+							<p>Completed Tickets</p>
+						</div>
+					</div>
+					
+					<div class="sidebar_menu_item">
+						<div class="sidebar_menu_item_picture">
+							<i class="fas fa-chart-area fa-lg"></i>
+						</div>
+						<div class="sidebar_menu_item_text">
+							<p>Statistics</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<div class="supporttickets">
+				<div class="table-responsive-vertical shadow-z-1 commonsupporttickets">
+					<div class="sidebar_element_top">
+					</div>
+					<div class="supporttickettabledetails commonsupporttickettabledetails">
+						<p class="supportticketsviewtitle">COMMON TICKETS</p>
+					
+						<div class="sortbybox">
+							<p class="sortbyboxelement">FILTER BY: </p>
+							<select class="sortbyboxelement commonsortbyselectelement">
+								<option>LAST UPDATED</option>
+								<option>SUPPORT DATE</option>
+								<option>REPORTED DATE</option>
+								<option>LOCATION</option>
+								<option>USER</option>
+								<option>SUPPORT AREA</option>
+								<option>STATUS</option>	
+							</select>
+						</div>
+					</div>
+					<!-- Table starts here -->
+					<table id="table" cellspacing=0 class="table table-hover table-mc-light-blue  supporticketstable">
+						<thead>
+							<tr class="columntitleview">
+							<th class="tabledatetimecolumn">SUPPORT DATE &amp; TIME</th>
+							<th>LOCATION</th>
+							<th>USER</th>
+							<th>TYPE</th>
+							<th>ACTIONS</th>
+							</tr>
+						</thead>
+						<tbody id="commonsupportticketview">
+						</tbody>
+					</table>
+				</div>
+
+
+				<div class="table-responsive-vertical shadow-z-1 assignedsupporttickets">
+					<div class="supporttickettabledetails assignedsupporttickettabledetails">
+						<p class="supportticketsviewtitle">ASSIGNED TICKETS</p>
+					
+						<div class="sortbybox">
+							<p class="sortbyboxelement">FILTER BY: </p>
+							<select class="sortbyboxelement assignedsortbyselectelement">
+								<option>LAST UPDATED</option>
+								<option>SUPPORT DATE</option>
+								<option>REPORTED DATE</option>
+								<option>LOCATION</option>
+								<option>USER</option>
+								<option>SUPPORT AREA</option>
+								<option>STATUS</option>	
+							</select>
+						</div>
+					</div>
+					<!-- Table starts here -->
+					<table id="table" cellspacing=0 class="table table-hover table-mc-light-blue  supporticketstable">		
+						<thead>
+							<tr class="columntitleview assignedcolumntitleview">
+								<th>STATUS</th>
+								<th class="tabledatetimecolumn">SUPPORT DATE &amp; TIME</th>
+								<th>LOCATION</th>
+								<th>USER</th>
+								<th>TYPE</th>
+								<th>ACTIONS</th>
+							</tr>
+						</thead>
+						<tbody id="assignedsupportticketview">
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="supporttickets hidden">
+				<div class="sidebar_element_top">
+				</div>
+				<div class="table-responsive-vertical shadow-z-1 assignedsupporttickets">
+						<div class="supporttickettabledetails completedsupporttickettabledetails">
+							<p class="supportticketsviewtitle">COMPLETED TICKETS</p>
+						
+							<div class="sortbybox">
+								<p class="sortbyboxelement">FILTER BY: </p>
+								<select class="sortbyboxelement completesortbyselectelement">
+									<option>LAST UPDATED</option>
+									<option>SUPPORT DATE</option>
+									<option>REPORTED DATE</option>
+									<option>LOCATION</option>
+									<option>USER</option>
+									<option>SUPPORT AREA</option>
+									<option>STATUS</option>	
+								</select>
+							</div>
+						</div>
+					<!-- Table starts here -->
+					<table id="table" cellspacing=0 class="table table-hover table-mc-light-blue">
+						<thead>
+							<tr class="columntitleview">
+							<th>SUPPORT DATE &amp; TIME</th>
+							<th>LOCATION</th>
+							<th>USER</th>
+							<th>TYPE</th>
+							<th>ACTIONS</th>
+							</tr>
+						</thead>
+						<tbody id="completedsupportticketview">
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="supporttickets hidden">
+				<div class="sidebar_element_top">
+				</div>
+				<div class="reportsbox">
+					<p class="reportsboxtitle">REPORTS</p>
+					<div class="reportsboxstatisticview">
+						<div class="reportsboxstatsbox">
+							<p class="supportticketsviewtitle reportstattitleview">SUPPORT TICKETS</p>
+							<p class="statisticstitlenumber statistics_supportticketsview">341</p>
+						</div>
+						<div class="reportsboxstatsbox">
+							<p class="supportticketsviewtitle reportstattitleview">UNIQUE USERS</p>
+							<p class="statisticstitlenumber statistics_staffview">39</p>
+						</div>
+						<div class="reportsboxstatsbox">
+							<p class="supportticketsviewtitle reportstattitleview">ONGOING TICKETS</p>
+							<p class="statisticstitlenumber statistics_ongoingticketsview">14</p>
+						</div>
+						<div class="reportsboxstatsbox">
+							<p class="supportticketsviewtitle reportstattitleview">DELAYED TICKETS</p>
+							<p class="statisticstitlenumber statistics_delayedticketsview">9</p>
+						</div>
+						<div class="reportsboxstatsbox">
+							<p class="supportticketsviewtitle reportstattitleview">COMPLETE TICKETS</p>
+							<p class="statisticstitlenumber statistics_completeticketsview">4</p>
+						</div>
+					</div>
+					<p class="reportsboxtitle statisticsviewtitle">SUPPORT TICKETS LAST WEEK</p>
+					<div>
+						<canvas id="myChart" class="supportticketsnumberview"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="supportticketdetailsbox" class="issueexpandviewbox">
+		</div>
+
+		<div class="supportticketsearchdisplay hidden">
+			<div class="table-responsive-vertical shadow-z-1 searchviewsupporttickets">
+				<!-- Table starts here -->
+				<div class="sidebar_element_top">
+				</div>
+				<div class="supportticketsearchexport">	
+					<p class="supportticketsearchexporttitle">EXPORT AS: </p>
+					<div class="supportticketsearchviewactions">
+						<p class="exportsearchticketscsv">CSV</p>
+						<p class="exportsearchticketsxls">EXCEL</p>
+					</div>
+				</div>
+				<div class="supportticketsearchexport supportticketsearchtypebox">	
+					<p class="supportticketsearchexporttitle">SEARCH TYPE: </p>
+					<div class="supportticketsearchviewactions">
+						<p class="search_type normal_search_format searchtypeselected">NORMAL</p>
+						<p class="search_type exact_search_format">EXACT</p>
+						<p class="search_type columnwise_search_format">COLUMNWISE</p>
+					</div>
+				</div>
+				<div class="supporttickettabledetails">
+					<p class="supportticketsviewtitle searchviewtitle">SEARCH RESULTS</p>
+				
+					<div class="sortbybox sortbybosearchview">
+						<p class="sortbyboxelement searchviewtitle">FILTER BY: </p>
+						<select class="sortbyboxelement sortbyboxsearchviewtext">
+							<option>LAST UPDATED</option>
+							<option>SUPPORT DATE</option>
+							<option>REPORTED DATE</option>
+							<option>LOCATION</option>
+							<option>USER</option>
+							<option>SUPPORT AREA</option>
+							<option>STATUS</option>	
+						</select>
+					</div>
+				</div>
+				<table id="table" cellspacing=0 class="table table-hover table-mc-light-blue">
+					<thead>
+						<tr class="columntitleview">
+						<th>STATUS</th>
+						<th class="tabledatetimecolumn">SUPPORT DATE</th>
+						<th class="tabledatetimecolumn">REPORTED DATE</th>
+						<th>LOCATION</th>
+						<th>USER</th>
+						<th>STAFF</th>
+						<th>TYPE</th>
+						<th>ACTIONS</th>
+						</tr>
+					</thead>
+					<tbody id="supportticketsearchbox">
+					</tbody>
+					</table>
+				</div>
+		</div>
+
+		<div id="optionbackground" onclick="toggleOption(ACTIVE_OPTION);">
+		</div>
+		
+		<div class="supportticketchangesview">
+		</div>
+
+		<div id="someelementprovided">
+		</div>
+
+		<div class="assignsupportstaffbox">
+		</div>
+	</body>
+	<script>
+			var auth2; // The Sign-In object.
+			var googleUser; // The current user.
+
+			String.prototype.toProperCase = function () {
+				return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+			};
+
+			
+			function toggleHidden(some_given_element){
+				if(some_given_element.style.display == '') some_given_element.style.display = 'none';
+				
+				if(some_given_element.style.display == 'block') some_given_element.style.display = 'none';
+					
+				else if(some_given_element.style.display == 'none') some_given_element.style.display = 'block';
+			}
+			
+			function toggleOption(some_given_element, some_given_callback){
+				console.log('nfsdjnfjksdn');
+
+				toggleHidden(some_given_element);
+				
+				if(ACTIVE_OPTION == some_given_element) ACTIVE_OPTION = '';
+				
+				else ACTIVE_OPTION = some_given_element;
+				
+				toggleHidden(OPTION_BACKGROUND);
+
+				if(typeof some_given_callback == 'function') some_given_callback();
+
+				console.log(some_given_element.style);
+				console.log(some_given_element.classList);
+			}
+			
+			function showuserdetails(event){
+				if(event.target.id == 'notificationbuttonpictureview' || event.target.tagName == 'svg'){
+					toggleOption(document.querySelector('.usernotificationview'));
+					notificationBoxView.addSeenNotifications();
+					return;
+				}
+
+				toggleOption(CURRENT_USER);
+			}
+			
+			var socket = io.connect('http://' + document.domain + ':' + location.port);
+				
+			socket.on('connect', function() {
+				socket.emit('my event', {data: 'I\'m connected!'});
+				console.log("sent message");
+				getunassignedticketdetailsprovided();
+				getassignedticketdetailsprovided();
+			});
+			
+			var ACTIVE_OPTION = '';
+
+			window.onload = function(){
+				OPTION_BACKGROUND = document.getElementById('optionbackground');
+				CURRENT_USER = document.getElementById('currentuserbox')
+				SIDEBARVIEW= document.querySelector('.sidebar');
+				supportticketdetails.elementInDOM = document.getElementById('supportticketdetailsbox');
+				notificationList.notificationElementInDOM = document.getElementById('someelementprovided');
+
+				var content_views = document.querySelectorAll('.supporttickets');
+
+				var sidebar_menu_options = document.querySelectorAll('.sidebar_menu_item');
+
+				for(var i = 0; i < sidebar_menu_options.length; ++i){
+					sidebar_menu_options[i].onclick = function(){
+						for(var i = 0; i < content_views.length; ++i) content_views[i].style.display = 'none';
+						
+						for(var i = 0; i < sidebar_menu_options.length; ++i) sidebar_menu_options[i].classList.remove('active_menu_item');
+
+						this.classList.add('active_menu_item');
+						
+						content_views[Array.prototype.indexOf.call(sidebar_menu_options, this)].style.display = 'block';
+					}
+				}
+
+				sidebar_menu_options[1].previousOnClick = sidebar_menu_options[0].onclick;
+
+				sidebar_menu_options[1].onclick = function(){
+					sidebar_menu_options[1].previousOnClick();
+					
+					getcompletedticketdetailsprovided();
+				};
+
+				sidebar_menu_options[2].previousOnClick = sidebar_menu_options[2].onclick;
+
+				sidebar_menu_options[2].onclick = function(){
+					sidebar_menu_options[2].previousOnClick();
+					getStatistics();
+				}
+
+				document.querySelector('.new_ticket').onclick = function(){
+					window.open('/createsupporttickets');
+				}
+
+				var supportTicketViewHeight = (window.innerHeight - 120 - (14.8 * 2)) / 2;
+
+				var supportTicketViews = document.querySelectorAll('.supporticketstable');
+
+				for(var i = 0; i < supportTicketViews.length; ++i){
+					supportTicketViews[i].style.maxHeight = `${supportTicketViewHeight}px`;
+				}
+			}
+
+			function assignedSupportTicket(some_support_ticket_provided){
+				this.elementid = Math.floor(Math.random() * 100000000);
+
+				this.supportid = some_support_ticket_provided.supportid;
+
+				this.ticketsubmissiondatetime = some_support_ticket_provided.ticketsubmissiondatetime;
+	
+				this.lastupdated = some_support_ticket_provided.lastupdated;
+
+				this.user_name = some_support_ticket_provided.user_name;
+				
+				this.user_email = some_support_ticket_provided.user_email;
+				
+				this.supporttype = some_support_ticket_provided.supporttype;
+
+				this.supportdescription = some_support_ticket_provided.supportdescription;
+
+				this.supportstatustype = some_support_ticket_provided.supportstatustype;
+
+				this.supportstatusdescription = some_support_ticket_provided.supportstatusdescription;
+
+				this.supportlocation = some_support_ticket_provided.supportlocation;
+
+				this.supportdatetime = some_support_ticket_provided.supportdatetime;
+
+				this.supportstaffemail = some_support_ticket_provided.supportstaffemail;
+				
+				this.supportstaffassigned = some_support_ticket_provided.supportstaffname;
+
+				this.user_image = some_support_ticket_provided.user_image;
+
+				this.supportstaffimage = some_support_ticket_provided.supportstaffimage;
+
+				this.supportticketchanges = some_support_ticket_provided.supportticketchanges;
+
+				console.log(some_support_ticket_provided);
+
+				var supportDatetimeProvided = new Date(Date.parse(some_support_ticket_provided.supportdatetime));
+
+				var reportedDatetimeProvided = new Date(Date.parse(some_support_ticket_provided.ticketsubmissiondatetime));
+
+				var dateOptions = {year: 'numeric', month: 'long', day: 'numeric'};
+
+				var timeOptions = {hour12: true, hour: 'numeric', minute: 'numeric'};
+
+				this.getSupportTicket = function(search_support_ticket = false){
+					console.log(search_support_ticket);					
+					return `<tr id="${some_support_ticket_provided.supportid}">
+								${!search_support_ticket 
+								  && some_support_ticket_provided.supportstaffassigned != 'Unassigned to staff' 
+								  && some_support_ticket_provided.supportstatustype != 'Complete'
+								  && `<td data-title="STATUS" class="${some_support_ticket_provided.supportstatustype == 'Ongoing' 
+																 && `assignedsupportticketsongoing` 
+																 || some_support_ticket_provided.supportstatustype == 'Delayed' 
+																	 && `assignedsupportticketsdelayed`}">	
+										<select id="${some_support_ticket_provided.supportid}_supportticketcategory"class="assignedstaffsupportticketcategory" onchange="changesupporttype('${some_support_ticket_provided.supportid}', this.options[this.selectedIndex].value)">
+											${some_support_ticket_provided.supportstatustype == 'Ongoing'
+												&& `<option>ONGOING</option>
+													<option>DELAYED</option>
+													<option>COMPLETE</option>` 
+												||   some_support_ticket_provided.supportstatustype == 'Delayed'
+													&& `<option>DELAYED</option>
+														<option>ONGOING</option>
+														<option>COMPLETE</option>`}
+										</select>
+									</td>` 
+								|| (!search_support_ticket && some_support_ticket_provided.supportstatustype == 'Complete' 
+								|| !search_support_ticket && some_support_ticket_provided.supportstaffassigned == 'Unassigned to staff') 
+								   && `` 
+								|| ``}
+							
+								${search_support_ticket 
+									&& some_support_ticket_provided.supportstaffassigned != 'Unassigned to staff' 
+									&& some_support_ticket_provided.supportstatustype == 'Ongoing' 
+									&& `<td data-title="STATUS" class="assignedsupportticketsongoing"><p class="searchsupporttickettitle">ONGOING</p></td>`
+								|| search_support_ticket && some_support_ticket_provided.supportstatustype == 'Delayed' && `<td data-title="STATUS" class="assignedsupportticketsdelayed"><p class="searchsupporttickettitle">DELAYED</p></td>`
+								|| search_support_ticket && some_support_ticket_provided.supportstatustype == 'Complete' && `<td data-title="STATUS"><p class="searchsupporttickettitle">COMPLETE</p></td>`
+								|| search_support_ticket && some_support_ticket_provided.supportstaffassigned == 'Unassigned to staff' && `<td data-title="STATUS"><p class="searchsupporttickettitle">UNCLAIMED</p></td>`
+							    || !search_support_ticket && ``}
+								<td data-title="SUPPORT DATE &amp; TIME"><p class="tdcontentview">${supportDatetimeProvided.toLocaleDateString('en-GB', dateOptions)} ${supportDatetimeProvided.toLocaleTimeString('en-GB', timeOptions)}</p></td>
+								${search_support_ticket 
+								  && `<td data-title="SUPPORT DATE &amp; TIME"><p class="tdcontentview">${reportedDatetimeProvided.toLocaleDateString('en-GB', dateOptions)} ${reportedDatetimeProvided.toLocaleTimeString('en-GB', timeOptions)}</p></td>`
+								|| !search_support_ticket && ``}
+								<td data-title="LOCATION">
+									<p class="tdcontentview">${some_support_ticket_provided.supportlocation}</p>
+								</td>
+								<td data-title="USER">
+									<p class="tdcontentview">${some_support_ticket_provided.user_name}</p>
+								</td>
+								${search_support_ticket 
+								  && `<td data-title="SUPPORT STAFF"><p class="tdcontentview">${some_support_ticket_provided.supportstaffname}</p></td>`
+								|| !search_support_ticket && ``}
+								<td data-title="AREA"><p class="tdcontentview">${some_support_ticket_provided.supporttype}</p></td>
+								<td data-title="ACTIONS">	
+									<div class="supportticketviewactions">
+										<p onclick="copysupportticketdetails('${some_support_ticket_provided.supportid}')">COPY</p>
+										${some_support_ticket_provided.supportstaffassigned == 'Unassigned to staff' 
+										  && `<p onclick="claimsupportticket('${some_support_ticket_provided.supportid}')">CLAIM</p>` 
+										  || some_support_ticket_provided.supportstatustype == 'Complete' 
+											 && `<p style="display: none"></p>` 
+										  || some_support_ticket_provided.supportstaffassigned != 'Unassigned to staff' 
+											 && some_support_ticket_provided.supportstatustype != 'Complete'  
+											 && `<p onclick="unclaimsupportticket('${some_support_ticket_provided.supportid}');">DEFER</p>`}
+										<p onclick="showticketdetails('${some_support_ticket_provided.supportid}')">DETAILS</p>
+									</div>
+								</td>
+							</tr>`;
+				};
+			}
+
+			function supportticketlist(some_list_element_in_DOM_provided, some_sort_element_provided){
+				this.supportTicketList = [];
+				
+				this.listElementInDOM = some_list_element_in_DOM_provided;
+				
+				this.getIndex = function(some_support_id_provided){
+					try{
+						
+						for(var i = 0; i < this.supportTicketList.length; ++i){
+							if(this.supportTicketList[i].supportid == some_support_id_provided) return i;
+						}
+						
+						return -1;
+					}
+					
+					catch(some_error){
+						console.error(`Could not get index of support ticket: ${some_support_id_provided} due to: ${some_error}`);
+						throw 'Invalid support id provided'; 
+					}
+				};
+				
+				this.COMMON_SUPPORT_TICKET = 'Unassigned to Staff';
+				
+				this.removeAllElements = function(){
+					this.supportTicketList = [];
+					
+					while(this.listElementInDOM.firstChild){
+						this.listElementInDOM.removeChild(this.listElementInDOM.firstChild);
+					}
+				};
+				
+				this.COMMON_SUPPORT_TICKET = 'Unassigned to Staff';
+				
+				this.getSupportTicket = function(some_support_id_provided){
+					try{
+						return this.supportTicketList[this.getIndex(some_support_id_provided)];
+					}
+					catch(some_error){
+						return false;
+					}
+				};
+				
+				this.updateDOMElement = function(){
+					this.listElementInDOM.innerHTML = '';
+					
+					console.log(this.supportTicketList);
+
+					for(var i = 0; i < this.supportTicketList.length; ++i){
+						this.listElementInDOM.innerHTML += this.supportTicketList[i].getSupportTicket();
+					}
+				};
+				
+				this.addSupportTicket = function(some_ticket_provided, 
+												update_DOM_element = true){
+					//if(some_ticket_provided.supportstaffassigned == 'Unassigned to staff') this.supportTicketList.push(new commonSupportTicket(some_ticket_provided));
+					
+					//else if(some_ticket_provided.supportstatustype == 'Complete') this.supportTicketList.push(new completeSupportTicket(some_ticket_provided));
+					
+					this.supportTicketList.push(new assignedSupportTicket(some_ticket_provided));
+
+					if(update_DOM_element) this.updateDOMElement();
+					
+				};
+				
+				this.sortPropertyElements = ['lastupdated', 
+											 'supportdatetime', 
+											 'ticketsubmissiondatetime', 
+											 'supportlocation', 
+											 'userid', 
+											 'supporttype', 
+											 'supportstatustype'];
+
+				this.sortSupportTicketElementInDOM = some_sort_element_provided;
+
+				var currentSupportTicketsList = this;
+
+				this.sortSupportTicketElementInDOM.onchange = function(){
+					console.log('Sort support tickets');
+
+					console.log(currentSupportTicketsList.supportTicketList);
+
+					currentSupportTicketsList.supportTicketList = currentSupportTicketsList
+																  .sortSupportTicketList(currentSupportTicketsList.supportTicketList, 
+																						 currentSupportTicketsList.sortPropertyElements[this.selectedIndex]);
+
+					console.log(currentSupportTicketsList.supportTicketList);
+
+					currentSupportTicketsList.updateDOMElement();
+				};
+
+				this.sortSupportTicketList = function(some_support_ticket_list, some_sort_property = 'lastupdated'){
+					function compareSupportTickets(support_ticket_one, support_ticket_two){
+						console.log('Comparing support tickets')
+
+						console.log(some_sort_property);
+
+						if(support_ticket_one[some_sort_property] < support_ticket_two[some_sort_property]) return -1;
+
+						if(support_ticket_one[some_sort_property] > support_ticket_two[some_sort_property]) return 1;
+
+						return 0;
+					}
+
+					return some_support_ticket_list.sort(compareSupportTickets);
+				};
+
+				this.addSupportTicketsFromList = function(some_ticket_list_provided){
+					try{
+						var currentSupportTicketList = this;
+
+						console.log(this.sortPropertyElements[this.sortSupportTicketElementInDOM.selectedIndex]);
+						
+						some_ticket_list_provided = this.sortSupportTicketList(some_ticket_list_provided, 
+																			   this.sortPropertyElements[this.sortSupportTicketElementInDOM.selectedIndex]);
+
+						some_ticket_list_provided.forEach(function(some_ticket_provided){
+															currentSupportTicketList.addSupportTicket(some_ticket_provided, 
+																									false);
+														});
+						this.updateDOMElement();
+					}
+					catch(some_error){
+						console.error(`Could not add support tickets from list ${some_ticket_list_provided} due to: ${some_error}`);
+					}
+				};
+				
+				this.changeTicketValue = function(some_support_id_provided, 
+												some_property_name, 
+												some_property_value){
+					try{
+						this.supportTicketList[this.getIndex(some_support_id_provided)][some_property_name] = some_property_value;
+					}
+					
+					catch(some_error){
+						console.error(`Could not change property value for support ticket ${some_support_id_provided} : ${some_property_name} to: ${some_property_value} due to: ${some_error}`);
+					}
+				};
+				
+				this.removeSupportTicket = function(some_support_id_provided, 
+													update_DOM_element = true){	
+					try{
+						this.supportTicketList.splice(this.getIndex(some_support_id_provided), 
+													1);
+													
+						if(update_DOM_element) this.updateDOMElement();
+					}
+					
+					catch(some_error){
+						console.error(`Could not remove support ticket ${some_support_id_provided} due to: ${some_error}`);
+					}
+				};
+			};
+
+			function showticketdetails(some_support_id_provided){
+				if(assignedTicketsList.getIndex(some_support_id_provided) > -1){
+					supportticketdetails.supportTicketDetails(assignedTicketsList.getSupportTicket(some_support_id_provided));
+				}	
+
+				else if(commonTicketsList.getIndex(some_support_id_provided) > -1){
+					supportticketdetails.supportTicketDetails(commonTicketsList.getSupportTicket(some_support_id_provided));
+				}
+
+				else if(completedTicketsList.getIndex(some_support_id_provided) > -1){
+					supportticketdetails.supportTicketDetails(completedTicketsList.getSupportTicket(some_support_id_provided));
+				}
+
+				else if(searchSupportTicketsList.getIndex(some_support_id_provided) > -1){
+					supportticketdetails.supportTicketDetails(searchSupportTicketsList.getSupportTicket(some_support_id_provided));	
+				}
+
+				throw `Could not find support ticket with support ID: ${some_support_id_provided}`; 
+			}
+			
+			var supportticketcomment = {
+				elementInDOM: '',
+
+				elementData: function(){
+							return `<div class="commenttextbox">
+									</div>
+									<div class="commentaddbox">
+											<textarea id="commentaddvaluebox" class="commentaddvalue" rows="1" placeholder="Add a comment"></textarea>
+											<p id="commentaddbuttonview" class="commentaddbutton">ADD</p>
+									</div>`
+							},
+
+				
+				commentBoxElementInDOM: '',
+
+				supportid: '',
+
+				userImageUrl: '',
+
+				supportStaffImageUrl: '',
+
+				userCommentText: function(some_text_provided){
+					return `<div class="usercommentbox">
+								<div class="userimage" style="background: url('${this.userImageUrl}'); background-position: center; background-size: cover;">
+								</div>
+								<div class="username">
+									USER:
+								</div>
+								<div class="usercommenttext">
+									${some_text_provided}
+								</div>
+							</div>`;		
+				},
+
+				supportStaffCommentText: function(some_text_provided){
+					return `<div class="supportstaffcommentbox">
+								<div class="userimage" style="background: url('${this.supportStaffImageUrl}'); background-position: center; background-size: cover;">
+								</div>
+								<div class="username">
+									YOU:
+								</div>
+								<div class="supportstaffcommenttext">
+									${some_text_provided}
+								</div>
+							</div>`;
+				},
+
+				getCommentText: function(){
+					var supportTicketCommentBox = this;
+
+					socket.emit('viewsupportticketcomments', 
+								{supportid: supportTicketCommentBox.supportid});
+				},
+
+				showCommentText: function(some_support_ticket_comments){
+					this.commentBoxElementInDOM.innerHTML = '';
+
+					console.log(some_support_ticket_comments);
+
+					for(var i = 0; i < some_support_ticket_comments.length; ++i){
+						if(some_support_ticket_comments[i].commentauthor == 1){
+							this.commentBoxElementInDOM.innerHTML += this.userCommentText(some_support_ticket_comments[i].commenttext);
+							continue;
+						}
+						
+						else{
+							this.commentBoxElementInDOM.innerHTML += this.supportStaffCommentText(some_support_ticket_comments[i].commenttext);
+						}
+					}
+				},
+
+				addComment: function(some_support_ticket_comment_text){
+					socket.emit('addsupportticketcomments', 
+								{supportid: this.supportid, 
+								commenttext: some_support_ticket_comment_text});
+				},
+
+				addSupportTicketCommentBox: function(some_element_in_DOM, 
+													some_supportid, 
+													some_user_image_url, 
+													some_support_staff_image_url){
+					
+					console.log('Support ticket comments');
+
+					this.elementInDOM = some_element_in_DOM;
+
+					this.elementInDOM.innerHTML = this.elementData();
+
+					this.commentBoxElementInDOM = document.querySelector('.commenttextbox');
+
+					this.supportid = some_supportid;
+
+					this.userImageUrl = some_user_image_url;
+
+					this.supportStaffImageUrl = some_support_staff_image_url;
+
+					var supportTicketCommentAddValue = document.getElementById('commentaddvaluebox');
+
+					var supportTicketCommentAddButton = document.getElementById('commentaddbuttonview');
+
+					var supportTicketCommentBox = this;
+
+					socket.on('supportticketcomments', function(some_support_ticket_comments){
+						supportTicketCommentBox.showCommentText(some_support_ticket_comments);
+					});		
+
+					this.getCommentText();
+
+					supportTicketCommentAddButton.onclick = function(){
+						supportTicketCommentBox.addComment(supportTicketCommentAddValue.value);
+					};
+
+					socket.on('addedsupportticketcomment', function(){
+						supportTicketCommentBox.getCommentText();
+						supportTicketCommentAddValue.value = '';
+						notificationList.addNotification('Added comment for support ticket');
+					});
+				}
+			};
+
+				var supportticketdetails = {
+		elementInDOM: '',
+
+		elementid: '',
+
+		elementData: function (some_ticket_provided) {
+			console.log(some_ticket_provided);
+
+			this.elementid = Math.floor(Math.random() * 100000000);
+
+			var supportDatetimeProvided = new Date(Date.parse(some_ticket_provided.supportdatetime));
+
+			var ticketSubmissionDatetimeProvided = new Date(Date.parse(some_ticket_provided.ticketsubmissiondatetime));
+
+			var lastUpdatedSubmissionDatetimeProvided = new Date(Date.parse(some_ticket_provided.lastupdated));
+
+			var dateOptions = {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			};
+
+			var timeOptions = {
+				hour12: true,
+				hour: 'numeric',
+				minute: 'numeric'
+			};
+
+			return `<div id="${this.elementid}" class="ongoingticketview">
+								<div class="supportticketdetailsview">
+									<div class="issueexpanddisplay">
+										<div class="issuedisplaypicture">
+											<i class="fas fa-exclamation-circle fa-lg"></i>
+										</div>
+										<div class="issueexpanddisplaytext">
+											<p>ISSUE ID: ${some_ticket_provided.supportid}</p>
+										</div>
+										<div class="issueoption" onclick="supportticketdetails.removeSupportTicketDetails()">
+											<i class="fas fa-times"></i>
+										</div>
+									</div>
+								
+									<p class="lastupdatedtextview">Last updated: ${lastUpdatedSubmissionDatetimeProvided.toLocaleDateString('en-GB', dateOptions)} ${lastUpdatedSubmissionDatetimeProvided.toLocaleTimeString('en-GB', timeOptions)}</p>
+
+									<div class="issueexpandtitle">
+										<p>TICKET TYPE</p>
+									</div>
+									
+									<div class="issueexpandoptions">
+										<select id="assignedsupportstaffsupportticket_${some_ticket_provided.supportid}" class="assignedstaffsupportticketcategory">
+											${some_ticket_provided.supportstatustype == 'Ongoing' && `<option>ONGOING</option>
+																									<option>DELAYED</option>
+																									<option>COMPLETE</option>` 
+
+												|| some_ticket_provided.supportstatustype == 'Delayed' && `<option>DELAYED</option>
+																										<option>ONGOING</option>
+																										<option>COMPLETE</option>`
+
+												|| some_ticket_provided.supportstatustype == 'Complete' && `<option>COMPLETE</option>
+																											<option>ONGOING</option>
+																											<option>DELAYED</option>`}
+										</select>
+									</div>
+									
+									<div class="issueexpandtitle">
+										<p>SUPPORT TYPE</p>
+									</div>
+									
+									<div class="issueexpandname">
+										<p>${some_ticket_provided.supporttype}</p>
+									</div>
+									
+									<div class="issueexpandtitle expandtitledown">
+										<p>SUPPORT DESCRIPTION</p>
+									</div>
+									
+									<div class="issueexpandtextsupportdescrirption">
+										<p>${some_ticket_provided.supportdescription}</p>
+									</div>
+									
+									<div class="issueexpanddetails">
+									
+										<div class="issueexpandtime issueexpanddetailbox">
+											<div class="issueexpanddetailtitle">
+												<p><i class="fas fa-calendar"></i> REPORTED ON</p>
+											</div>
+											<div class="issueexpanddetailtext">
+												<p>${ticketSubmissionDatetimeProvided.toLocaleDateString('en-GB', dateOptions)} ${ticketSubmissionDatetimeProvided.toLocaleTimeString('en-GB', timeOptions)}</p>
+											</div>
+										</div>	
+									<div class="issueexpandtime issueexpanddetailbox">
+											<div class="issueexpanddetailtitle">
+												<p><i class="fas fa-calendar"></i> SUPPORT DATE &amp; TIME</p>
+											</div>
+											<div class="issueexpanddetailtext">
+												<p>${supportDatetimeProvided.toLocaleDateString('en-GB', dateOptions)} ${supportDatetimeProvided.toLocaleTimeString('en-GB', timeOptions)}</p>
+											</div>
+										</div>	
+										<div class="issueexpandlocation issueexpanddetailbox issueexpanddetailboxdown">
+											<div class="issueexpanddetailtitle">
+												<p><i class="fas fa-map-marker"></i> SUPPORT LOCATION</p>
+											</div>
+											<div class="issueexpanddetailtext">
+												<p>${some_ticket_provided.supportlocation}</p>
+											</div>
+										</div>
+										<div class="issueexandstaff issueexpanddetailbox issueexpanddetailboxdown">
+											<div class="issueexpanddetailtitle">
+												<p><i class="fas fa-user"></i> REPORTED BY</p>
+											</div>
+											<div class="issueexpanddetailtext">
+												<p>${some_ticket_provided.user_name}</p>
+											</div>
+										</div>
+									</div>
+									
+									${some_ticket_provided.supportstaffassigned != 'Unassigned to staff' 
+									  && `<div class="supportstatuschangebox">
+												<div class="supportstatuschangetitle">
+													<p>SUPPORT STATUS</p>
+												</div>
+												<input type="text" id="supportstatuschangebox_${some_ticket_provided.supportid}" class="supportstatuschange" placeholder="Support status" value="${some_ticket_provided.supportstatusdescription}">
+												<p id="supportstatuschangebutton_${some_ticket_provided.supportid}" class="supportstatuschangebutton" onclick="changesupportstatusdescription('${some_ticket_provided.supportid}', document.getElementById('supportstatuschangebox_${some_ticket_provided.supportid}').value)">CHANGE STATUS</p>
+										  </div>` 
+									|| some_ticket_provided.supportstaffassigned == 'Unassigned to staff' 
+									   && ``}
+									
+									<div class="issueexpandtitle">
+										<p>COMMENTS</p>
+									</div>
+
+									<div class="commentbox">
+									</div>
+									
+									<div class="issueexpandbuttonview">
+										<div class="issueexpandbutton">
+											<p onclick="copysupportticketdetails('${some_ticket_provided.supportid}')" onclick="copysupportticketdetails('${some_ticket_provided.supportid}')"><i class="fas fa-clone"></i> COPY ISSUE</p>
+										</div>
+										
+										<div class="issueexpandbutton supportticketchangesbutton">
+											<p><i class="fas fa-history"></i> VIEW TICKET HISTORY</p>
+										</div>
+
+										${some_ticket_provided.supportstaffassigned == 'Unassigned to staff' &&   
+										  `<div class="issueexpandbutton">
+												<p onclick="claimsupportticket('${some_ticket_provided.supportid}'); supportticketdetails.removeSupportTicketDetails();"><i class="fas fa-sign-out-alt"></i> CLAIM SUPPORT TICKET</p>
+											</div>`  
+											|| some_ticket_provided.supportstaffassigned != 'Unassigned to staff' 
+											   && ``}
+
+										${some_ticket_provided.supportstatustype != 'Complete' && some_ticket_provided.supportstaffassigned != 'Unassigned to staff'
+										  &&  `<div class="issueexpandbutton">
+													<p onclick="unclaimsupportticket('${some_ticket_provided.supportid}'); supportticketdetails.removeSupportTicketDetails();"><i class="fas fa-sign-out-alt"></i> DEFER TO COMMON QUEUE</p>
+											   </div>` 
+										  || (some_ticket_provided.supportstatustype == 'Complete' || some_ticket_provided.supportstaffassigned == 'Unassigned to staff')
+										      && ``}
+									</div>
+								</div>
+							</div>`
+		},
+
+		supportTicketDetails: function (some_ticket_provided) {
+			if (!this.elementid.length) {
+				this.elementInDOM.style.display = 'block';
+				this.elementInDOM.innerHTML = this.elementData(some_ticket_provided);
+				console.log(some_ticket_provided);
+
+				var selectedSupportStatusTypeElement = document.getElementById(
+					`assignedsupportstaffsupportticket_${some_ticket_provided.supportid}`);
+
+				selectedSupportStatusTypeElement.onchange = function () {
+					changesupporttype(some_ticket_provided.supportid,
+						selectedSupportStatusTypeElement.options[selectedSupportStatusTypeElement.selectedIndex]
+						.value);
+				};
+
+				supportticketcomment.addSupportTicketCommentBox(document.querySelector('.commentbox'),
+					some_ticket_provided.supportid,
+					some_ticket_provided.user_image,
+					some_ticket_provided.supportstaffimage);
+
+				var support_ticket_details_box = this;
+
+				document.querySelector('.supportticketchangesbutton').onclick = function () {
+					supportticketchanges.addSupportTicketChangesBox(some_ticket_provided);
+					support_ticket_details_box.removeSupportTicketDetails();
+				};
+			} else {
+				this.removeSupportTicketDetails();
+				this.supportTicketDetails(some_ticket_provided);
+				console.log(some_ticket_provided);
+				supportticketcomment.addSupportTicketCommentBox(document.querySelector('.commentbox'),
+					some_ticket_provided.supportid,
+					some_ticket_provided.user_image,
+					some_ticket_provided.supportstaffimage);
+			}
+		},
+
+		removeSupportTicketDetails: function () {
+			if (this.elementid) {
+				this.elementInDOM.removeChild(document.getElementById(this.elementid));
+				this.elementid = '';
+				this.elementInDOM.style.display = 'none';
+			}
+		}
+	};
+
+
+			var commonTicketsList = new supportticketlist(document.getElementById('commonsupportticketview'), 
+														  document.querySelector('.commonsortbyselectelement'));
+				
+			var assignedTicketsList = new supportticketlist(document.getElementById('assignedsupportticketview'), 
+															document.querySelector('.assignedsortbyselectelement'));
+
+			var completedTicketsList = new supportticketlist(document.getElementById('completedsupportticketview'), 
+															 document.querySelector('.completesortbyselectelement'));
+
+	function copycompletesupportticketdetails(some_support_id_provided){
+		getSupportTicketText(completedTicketsList.getSupportTicket(some_support_id_provided));
+	
+		notificationList.addNotification('Copied ticket to clipboard');
+	}
+
+	function copysupportticketdetails(some_support_id_provided){
+		getSupportTicketText(assignedTicketsList.getSupportTicket(some_support_id_provided));
+		notificationList.addNotification('Copied ticket to clipboard');
+	}
+
+	function getunassignedticketdetailsprovided(){
+		console.log('Viewing unassigned tickets');
+		socket.emit('viewunassignedtickets');
+	}
+	
+	function getassignedticketdetailsprovided(){
+		console.log('Viewing assigned tickets');
+		socket.emit('viewassignedtickets');
+	}
+	
+	function getcompletedticketdetailsprovided(){
+		console.log('Viewing completed tickets');
+		socket.emit('viewcompletedtickets');
+	}
+
+	function claimsupportticket(some_ticket_support_id_provided){
+		socket.emit('claimsupportticket', {supportid: some_ticket_support_id_provided});
+	}
+	
+	function changesupportstatusdescription(some_ticket_support_id_provided, some_ticket_support_status_description){
+		socket.emit('changesupportstatusdescription', {supportid: some_ticket_support_id_provided, supportstatusdescription: some_ticket_support_status_description});
+	}
+	
+	function unclaimsupportticket(some_ticket_support_id_provided){
+		socket.emit('unclaimsupportticket', {supportid: some_ticket_support_id_provided})
+	}
+	
+	function assignsupportticket(some_support_ticket_details){
+		socket.emit('adminuserassignsupportticket', some_support_ticket_details);
+	}
+
+	function changesupporttype(some_ticket_support_id_provided, some_support_status_provided){
+		console.log('Changed support status type');	
+
+		socket.emit('changesupportticketstatus', {supportid: some_ticket_support_id_provided, 
+												  supportstatustype: some_support_status_provided.toProperCase()});
+	}
+	
+	var supportstaffchoosebox = {
+		elementInDOM: '',
+
+		elementData: function(){
+						return `<div class="supportstaffchooseview">
+									<div class="supportstaffchoosebox">
+										<p class="supportticketsviewtitle">ASSIGN SUPPORT STAFF</p>
+										<p class="supportstaffchoosetitletext">Choose a support staff member to assign the support ticket to</p>
+										<div class="supportstaffchooselistbox">
+										</div>
+										<p class="supportstaffchoosecancelbutton" onclick="supportstaffchoosebox.removeSupportStaffChoose()">CANCEL</p>
+									</div>
+								</div>`;
+		},
+
+		supportStaffElement: function(some_support_staff_details){
+						return `<div class="supportstaffchoosetext" onclick="supportstaffchoosebox.reassignSupportTicket('${some_support_staff_details.email}');">
+									<div class="supportstaffchooseimage" style="background: url('${some_support_staff_details.image}'); background-position: center; background-size: cover;">
+									</div>
+									<p class="supportstaffchoosenametext">${some_support_staff_details.name}</p>
+								</div>`;
+		},
+
+		currentSupportID: '',
+
+		currentSupportStaff: '',
+
+		supportStaffList: [],
+
+		showSupportStaff: function(){
+			var supportstafflistelement = document.querySelector('.supportstaffchooselistbox');
+
+			for(var i = 0; i < this.supportStaffList.length; ++i){
+				if(this.supportStaffList[i].email == 'Unassigned to staff' 
+				   || this.supportStaffList[i].email == this.currentSupportStaff) continue;
+
+				supportstafflistelement.innerHTML += this.supportStaffElement(this.supportStaffList[i]);
+			}
+		},
+
+		reassignSupportTicket: function(some_support_staff_email){
+			assignsupportticket({supportid: this.currentSupportID, supportstaffemail: some_support_staff_email});
+		},
+
+		addSupportStaffChooseBox: function(some_element_in_DOM_provided){
+			this.elementInDOM = some_element_in_DOM_provided;
+			this.elementInDOM.innerHTML += this.elementData();
+
+			var currentsupportstaffchoosebox = this;
+
+			socket.emit('viewsupportstaffmembers');
+
+			socket.on('supportstaffmembers', function(some_support_staff){
+				currentsupportstaffchoosebox.supportStaffList = JSON.parse(some_support_staff);
+				currentsupportstaffchoosebox.showSupportStaff();
+			});
+
+			this.elementInDOM.style.display = 'none';
+		},
+
+		removeSupportStaffChoose: function(){
+			this.elementInDOM.style.display = 'none';
+			this.currentSupportStaff = '';
+			this.currentSupportID = '';
+		},
+
+		showSupportStaffChoose: function(some_support_ticket){
+			this.elementInDOM.style.display = 'block';
+			this.currentSupportStaff = some_support_ticket.supportstaffemail;
+			this.currentSupportID = some_support_ticket.supportid;
+		}
+	};
+
+	socket.on('reassignedsupportticket', function(){
+		getassignedticketdetailsprovided();
+		getunassignedticketdetailsprovided();
+		supportstaffchoosebox.removeSupportStaffChoose();
+		supportticketdetails.removeSupportTicketDetails();
+		notificationList.addNotification('Assigned support ticket');
+	});
+
+	socket.on('assignedtickets', function(someticketlistprovided){
+		assignedTicketsList.removeAllElements();
+
+		if(JSON.parse(someticketlistprovided).length){
+			assignedTicketsList.addSupportTicketsFromList(JSON.parse(someticketlistprovided));
+		}
+	});
+
+	socket.on('unassignedtickets', function(someticketlistprovided){
+		commonTicketsList.removeAllElements();
+
+		if(JSON.parse(someticketlistprovided).length){
+			commonTicketsList.addSupportTicketsFromList(JSON.parse(someticketlistprovided));
+		}		
+	});
+
+	socket.on('completedtickets', function(someticketlistprovided){
+		console.log('Completed tickets');
+
+		completedTicketsList.removeAllElements();
+
+		if(JSON.parse(someticketlistprovided).length){
+			completedTicketsList.addSupportTicketsFromList(JSON.parse(someticketlistprovided));
+		}		
+	});
+
+	socket.on('newunassignedticket', function(){
+										getunassignedticketdetailsprovided();
+										getassignedticketdetailsprovided();
+										notificationList.addNotification('New support ticket in common queue');
+	});
+	
+	socket.on('newassignedticket', function(){
+										getunassignedticketdetailsprovided();
+										getassignedticketdetailsprovided();
+										notificationList.addNotification('New support ticket assigned');
+	});
+
+	socket.on('changedsupportticketstatus', function(){
+		getassignedticketdetailsprovided();
+		notificationList.addNotification('Changed support ticket type');
+	});
+
+	socket.on('changedsupportticketstatusdescription', function(){
+		getassignedticketdetailsprovided();
+		notificationList.addNotification('Changed support ticket status description');
+	});
+	
+	socket.on('claimedsupportticket', function(){
+		getunassignedticketdetailsprovided();
+		getassignedticketdetailsprovided();
+		notificationList.addNotification('Support ticket claimed');
+	});
+	
+	socket.on('unclaimedsupportticket', function(){
+		getunassignedticketdetailsprovided();
+		getassignedticketdetailsprovided();
+		notificationList.addNotification('Added support ticket to common queue');
+	});
+	
+	socket.on('cancelledsupportticket', function(){
+		getunassignedticketdetailsprovided();
+		getassignedticketdetailsprovided();
+		notificationList.addNotification('Support ticket cancelled');
+	});
+
+	var supportticketsearch = {
+		elementInDOM: function(){
+						return document.getElementById('supportticketsearchbox');
+					  },
+
+		searchElementInDOM: '',
+
+		getSupportTicketSearchDetails: function(some_text_provided, some_search_mode){
+			console.log(some_search_mode);
+
+			var some_support_ticket = new Object;
+		
+			some_support_ticket['mode'] = some_search_mode;
+
+			if(some_search_mode == 'unformatted'){
+				some_support_ticket['search_text'] = some_text_provided;
+				return some_support_ticket;
+			} 
+
+			some_support_ticket['or_fieldnames'] = []
+
+			while(some_text_provided.length > 0){
+				var current_field = some_text_provided.substring(0, some_text_provided.indexOf(';'));
+				
+				if(current_field.length == 0) return false;
+
+				if(current_field.substring(0, 2) === '||'){
+					current_field = current_field.substring(2);
+					some_support_ticket['or_fieldnames'].push(current_field.substring(0, current_field.indexOf(':')));
+				}
+
+				var current_field_name = current_field.substring(0, current_field.indexOf(':'));
+
+				if(current_field_name.length == 0) return false;
+
+				var current_field_value = current_field.substring(current_field.indexOf(':') + 1); 
+				
+				if(current_field_value.length == 0) return false;
+
+				some_support_ticket[current_field_name] = current_field_value;
+
+				some_text_provided = some_text_provided.substring(some_text_provided.indexOf(';') + 1);
+			}
+
+			return some_support_ticket;
+
+			throw  Error('Invalid search string provided');
+		},
+
+		searchSupportTicketsList: [],
+
+		searchFormats: ['unformatted', 'exact', 'formatted'],
+
+		searchFormatSelectedIndex: 0,
+
+		sendSupportTicketSearch: function(some_support_ticket_search_details){
+			if(!some_support_ticket_search_details) return;
+
+			var currentSupportTicketSearchBox = this;
+			var supportticketssearch = new XMLHttpRequest();
+
+			supportticketssearch.open('POST', 
+										'/searchsupportstaffsupporttickets', 
+										true);
+
+			supportticketssearch.setRequestHeader('content-type', 
+													'application/x-www-form-urlencoded');
+
+			supportticketssearch.onloadend = function(){
+													var some_support_tickets = JSON.parse(this.responseText);
+
+													console.log(some_support_tickets);
+
+													currentSupportTicketSearchBox.elementInDOM()
+																				 .innerHTML = '';
+
+													currentSupportTicketSearchBox.searchSupportTicketsList = some_support_tickets;
+
+													for(var i = 0; i < some_support_tickets.length; ++i){
+														var support_ticket =  new assignedSupportTicket(some_support_tickets[i]);
+														currentSupportTicketSearchBox.elementInDOM()
+																					 .innerHTML += support_ticket.getSupportTicket(true);
+													}
+											 }
+
+			supportticketssearch.send(`search_details=${encodeURIComponent(JSON.stringify(some_support_ticket_search_details))}`);
+		},
+
+		supportTicketSearch: function(event){
+			var search_text = this.searchElementInDOM.value;
+
+			if(search_text.length <= 2) return false;
+
+			if(event.keyCode == 13){
+				console.log('Search support tickets');
+				this.sendSupportTicketSearch(this.getSupportTicketSearchDetails(search_text, 
+																			    this.searchFormats[this.searchFormatSelectedIndex]));	
+			}
+		},
+
+		addSupportTicketSearchBox: function(some_element_in_DOM){
+			this.searchElementInDOM = some_element_in_DOM;
+
+			var supportTicketSearchBox = this;
+
+			var searchSupportTicketsExportCSVElement = document.querySelector('.exportsearchticketscsv');
+
+			searchSupportTicketsExportCSVElement.onclick = function(){
+				var currentSupportTickets = supportTicketSearchBox.searchSupportTicketsList;
+
+				if(currentSupportTickets.length == 0) return false;
+				
+				for(var i = 0; i < currentSupportTickets.length; ++i){
+					delete currentSupportTickets[i].supportstaffassigned;
+					delete currentSupportTickets[i].user_id;
+					delete currentSupportTickets[i].user_image;
+					delete currentSupportTickets[i].supportstaffimage;
+					delete currentSupportTickets[i].supportticketchanges;
+				 }
+				 
+				/* make the worksheet */
+				var ws = XLSX.utils.json_to_sheet(currentSupportTickets);
+
+				/* write workbook (use type 'binary') */
+				var wbout = XLSX.utils.sheet_to_csv(ws);
+
+				/* generate a download */
+				function s2ab(s) {
+					var buf = new ArrayBuffer(s.length);
+					var view = new Uint8Array(buf);
+					for (var i=0; i!=s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
+					return buf;
+				}
+
+				saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 
+					`helpdesk_support_tickets_${Date.now()}_${currentSupportTickets.length}.csv`);
+			};
+
+			var searchSupportTicketsExportXLSElement = document.querySelector('.exportsearchticketsxls');
+
+			searchSupportTicketsExportXLSElement.onclick = function(){
+				var currentSupportTickets = supportTicketSearchBox.searchSupportTicketsList;
+
+				if(currentSupportTickets.length == 0) return false;
+
+				for(var i = 0; i < currentSupportTickets.length; ++i){
+					delete currentSupportTickets[i].supportstaffassigned;
+					delete currentSupportTickets[i].user_id;
+					delete currentSupportTickets[i].user_image;
+					delete currentSupportTickets[i].supportstaffimage;
+					delete currentSupportTickets[i].supportticketchanges;
+				}
+
+				/**
+				var searchSupportTicketsXLS = new XlsExport(currentSupportTickets, 'ABA Help Desk Support Tickets');
+				searchSupportTicketsXLS.exportToXLS();**/
+
+				console.log('Search support tickets XLSX');
+				
+				/* make the worksheet */
+				var ws = XLSX.utils.json_to_sheet(currentSupportTickets);
+
+				/* add to workbook */
+				var wb = XLSX.utils.book_new();
+				XLSX.utils.book_append_sheet(wb, ws, 'ABA Help Desk Support Tickets');
+
+				/* write workbook (use type 'binary') */
+				var wbout = XLSX.write(wb, {bookType:'xlsx', type:'binary'});
+
+				/* generate a download */
+				function s2ab(s) {
+					var buf = new ArrayBuffer(s.length);
+					var view = new Uint8Array(buf);
+					for (var i=0; i!=s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
+					return buf;
+				}
+
+				saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 
+					   `helpdesk_support_tickets_${Date.now()}_${currentSupportTickets.length}.xlsx`);
+			};
+
+			toggleHidden(document.querySelector('.user_image_display'));
+
+			var supportTicketSearchBoxCloseElement = document.querySelector('.searchresultclosebox');
+
+			this.searchElementInDOM.onclick= function(){
+				console.log('Search support tickets');
+				document.querySelector('.supportticketsearchdisplay').style.display = 'block';
+				document.querySelector('.user_image_display').style.display = 'none';
+				supportTicketSearchBoxCloseElement.style.display = 'block';
+			};
+
+			this.searchElementInDOM.onkeyup = function(event){
+				supportTicketSearchBox.supportTicketSearch(event);
+			}; 	
+
+			var search_type_elements = document.querySelectorAll('.search_type');
+
+			search_type_elements[0].style.background = 'none';
+			search_type_elements[0].style.color = '#ffffff';
+
+			for(var i = 0; i < search_type_elements.length; ++i){
+				search_type_elements[i].onclick = function(){
+					supportTicketSearchBox.searchFormatSelectedIndex = Array.prototype.indexOf.call(search_type_elements, this);
+
+					console.log(supportTicketSearchBox.searchFormats[supportTicketSearchBox.searchFormatSelectedIndex]);
+
+					for(var j = 0; j < search_type_elements.length; ++j){
+						search_type_elements[j].style.background = '#ffffff';
+						search_type_elements[j].style.color = '#000000';
+					}
+
+					this.style.background = 'none';
+					this.style.color = '#ffffff';
+				};
+			}
+
+			supportTicketSearchBoxCloseElement.onclick = function(){
+				document.querySelector('.supportticketsearchdisplay').style.display = 'none';
+				document.querySelector('.user_image_display').style.display = 'block';
+				this.style.display = 'none';
+			}
+		}
+	};
+
+	supportticketsearch.addSupportTicketSearchBox(document.getElementById('supportticketsearchvalue'));
+
+	function getStatistics(){
+		socket.emit('adminuserstatstext');
+	}
+
+	function displayStatistics(some_statistics){
+		document.querySelector('.statistics_supportticketsview').innerHTML = some_statistics.supporttickets;
+		document.querySelector('.statistics_staffview').innerHTML = some_statistics.uniqueusers;
+		document.querySelector('.statistics_ongoingticketsview').innerHTML = some_statistics.ongoingsupporttickets;
+		document.querySelector('.statistics_delayedticketsview').innerHTML = some_statistics.delayedsupporttickets;
+		document.querySelector('.statistics_completeticketsview').innerHTML = some_statistics.completesupporttickets;
+						
+		var current_date = new Date();
+
+		var months_text = ['JAN', 
+						   'FEB', 
+						   'MAR', 
+						   'APR', 
+						   'MAY', 
+						   'JUN', 
+						   'JUL', 
+						   'AUG', 
+						   'SEP', 
+						   'OCT', 
+						   'NOV', 
+						   'DEC'];
+
+		var statistics_dates = [];
+
+		for(var i = 0; i < 7; ++i){
+			statistics_dates.push(`${current_date.getDate()} ${months_text[current_date.getMonth()]}`);
+			current_date.setDate(current_date.getDate() - 1);
+		}
+
+		var myChart = new Chart(ctx, {
+								type: 'bar',
+								data: {
+									labels: statistics_dates.reverse(),
+									datasets: [{
+										label: 'Number of support tickets',
+										data: some_statistics.weeksupporttickets.reverse(),
+										backgroundColor: [
+											'rgba(236,236,236,0.5)',
+											'rgba(236,236,236,0.5)',
+											'rgba(236,236,236,0.5)',
+											'rgba(236,236,236,0.5)',
+											'rgba(236,236,236,0.5)',
+											'rgba(236,236,236,0.5)',
+											'rgb(44,56,73)'
+										],
+										borderWidth: 1
+									}]
+								},
+
+
+								options: {					
+									legend: {
+										display: false
+									},
+
+									scales: {
+										yAxes: [{
+											ticks: {
+												beginAtZero:true
+											}
+										}]
+									},
+
+									tooltips: {
+										callbacks: {
+												label: function(tooltipItem) {
+														return tooltipItem.yLabel;
+												}
+										}
+									}
+								}
+							});
+	};
+
+	var ctx = document.getElementById("myChart");
+	
+	ctx.height = 124;
+
+	socket.on('adminuserstats', displayStatistics);
+
+	document.querySelector('.exportsupportticketsbutton').onclick = function(){
+		window.location.href = '/ABAHelpDeskSupportTickets.csv';
+	}
+
+	document.querySelector('.exportsupportstaffbutton').onclick = function(){
+		window.location.href = 'ABAHelpDeskSupportStaff.csv';
+	}
+
+	document.querySelector('.exportsupportcommentsbutton').onclick = function(){
+		window.location.href = '/ABAHelpDeskSupportComments.csv';
+	}
+
+	var supportticketchanges = {
+		elementInDOM: '',
+
+		elementData: function(){
+			return `<div class="supportticketchangesdisplay">
+						<div class="supportticketupdates supportticketchangesview">
+							<p>SUPPORT TICKET UPDATES</p>
+						</div>
+						<div class="supportticketdetailsdisplay supportticketchangesview">
+						</div>
+					</div>`;
+		},
+
+		supportTicketElementData: function(some_support_ticket){
+			var supportdatetime = '';
+			
+			var reporteddatetime = '';
+
+			var supportDatetimeProvided = new Date(Date.parse(some_support_ticket.supportdatetime));
+
+			var ticketSubmissionDatetimeProvided = new Date(Date.parse(some_support_ticket.ticketsubmissiondatetime));
+
+			var dateOptions = {year: 'numeric', month: 'long', day: 'numeric'};
+
+			var timeOptions = {hour12: true, hour: 'numeric', minute: 'numeric'};
+
+			supportdatetime = `${supportDatetimeProvided.toLocaleDateString(dateOptions)} ${supportDatetimeProvided.toLocaleTimeString(timeOptions)}`;
+
+			reporteddatetime = `${ticketSubmissionDatetimeProvided.toLocaleDateString(dateOptions)} ${ticketSubmissionDatetimeProvided.toLocaleTimeString(timeOptions)}`;
+
+			return `<div class="supportticketchangesissueid">
+									<p class="supportticketchangesissueidtext">ISSUE ID: ${some_support_ticket.supportid}</p>
+									<p class="supportticketchangesbacktext">BACK</p>
+							</div>
+							<div class="issueexpandtitle">
+								<p>SUPPORT AREA</p>
+							</div>
+							<div class="issueexpandname">
+								<p>${some_support_ticket.supporttype}</p>
+							</div>
+							<div class="issueexpandtitle expandtitledown">
+								<p>SUPPORT DESCRIPTION</p>
+							</div>
+							<div class="issueexpandtextsupportdescrirption">
+								<p>${some_support_ticket.supportdescription}</p>
+							</div>
+							<div class="issueexpandtitle">
+								<p>TICKET TYPE</p>
+							</div>
+							<div class="supportticketchangestype">
+								${some_support_ticket.supportstatustype == 'Ongoing' 
+								  && `<p class="issueexpandeta supportticketchangestypetext">Ongoing</p>`
+								  || some_support_ticket.supporttypestatustype == 'Delayed'
+								  	 && `<p class="issueexpandeta supportticketchangestypetextdelayed">Delayed</p>`
+								  || some_support_ticket.supporttypestatustype == 'Complete'
+								  	 && `<p class="issueexpandeta supportticketchangestypetextdelayed">Complete</p>`}
+							</div>
+							<div class="issueexpandtitle">
+								<p>SUPPORT STATUS</p>
+							</div>
+							<div class="issueexpandtextsupportdescrirption">
+								<p>${some_support_ticket.supportstatusdescription}</p>
+							</div>
+							<div class="issueexpanddetails">
+								<div>
+									<div class="issueexpandtitle expandtitledown">
+										<p>SUPPORT STAFF</p>
+									</div>
+									<div class="supportstaffdetails supportticketchangesstaffbox">
+										${some_support_ticket.supportstaffname != 'Unassigned to staff' 
+										&& `<div class="supportstaffimage" style="background: url('${some_support_ticket.supportstaffimage}'); background-position: center; background-size: cover;"">
+											</div>
+											<div>
+												<p class="supportstaffname supportticketchangesstaffnametext">${some_support_ticket.supportstaffname}</p>
+												<p class="supportstaffemail">${some_support_ticket.supportstaffemail}</p>
+											</div>`
+										|| some_support_ticket.supportstaffname == 'Unassigned to staff' 
+										   && `<p class="supportstaffname supportticketchangesstaffnametext">Unassigned to staff</p>`}
+									</div>
+								</div>
+								<div>
+									<div class="issueexpandtitle expandtitledown">
+										<p>USER DETAILS</p>
+									</div>
+
+									<div class="supportstaffdetails supportticketchangesstaffbox">
+										<div class="supportstaffimage" style="background: url('${some_support_ticket.user_image}'); background-position: center; background-size: cover;">
+										</div>
+										<div>
+											<p class="supportstaffname supportticketchangesstaffnametext">${some_support_ticket.user_name}</p>
+											<p class="supportstaffemail">${some_support_ticket.user_email}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="issueexpanddetails">
+								<div class="issueexpandtime issueexpanddetailbox">
+									<div class="issueexpanddetailtitle">
+										<p><i class="fas fa-calendar"></i> SUPPORT DATE &amp; TIME</p>
+								</div>
+								<div class="issueexpanddetailtext">
+									<p>${supportdatetime}</p>
+								</div>
+							</div>
+							<div class="issueexpandtime issueexpanddetailbox supportticketchangedatetime">
+								<div class="issueexpanddetailtitle">
+									<p><i class="fas fa-calendar"></i> REPORTED ON</p>
+								</div>
+								<div class="issueexpanddetailtext">
+									<p>${reporteddatetime}</p>
+								</div>
+							</div>	
+					</div>`;
+		},
+
+		supportTicketChanges: [],
+
+		viewSupportTicket: function(some_index_provided){
+			console.log(some_index_provided);
+			document.querySelector('.supportticketdetailsdisplay').innerHTML = this.supportTicketElementData(this.supportTicketChanges[some_index_provided]);
+		},
+
+		supportTicketUpdateElementData: function(some_index, some_support_ticket_change_datetime, created_support_ticket = false){
+			return `<div class="supportticketupdatebox" onclick="supportticketchanges.viewSupportTicket(${some_index})">
+						<p class="supportticketupdate_title">${created_support_ticket 
+																&& `CREATED` 
+															   || !created_support_ticket 
+															      && `UPDATED`}</p>
+						<p class="supportticketupdate_datetime">${this.getNumberDate(some_support_ticket_change_datetime)}</p>
+					</div>`;
+		},
+
+
+		getNumberDate: function(some_date_provided){
+			var some_date_from_text = new Date(Date.parse(some_date_provided));
+
+			var timeOptions = {hour12: true, hour: 'numeric', minute: 'numeric'};
+
+			return `${some_date_from_text.getDate()}/${some_date_from_text.getMonth() + 1}/${some_date_from_text.getFullYear()} ${some_date_from_text.getFullYear()} ${some_date_from_text.toLocaleTimeString('en-GB', timeOptions)}`;
+		},
+
+		mergeSupportTicket: function(some_support_ticket, some_other_support_ticket){
+			var support_ticket_provided = some_support_ticket;
+
+			for(some_property in some_other_support_ticket){
+				support_ticket_provided[some_property] = some_other_support_ticket[some_property];
+			}
+
+			return support_ticket_provided;
+		},
+
+		addSupportTicketChangesBox: function(some_support_ticket){
+			this.elementInDOM.innerHTML = this.elementData();
+
+			this.elementInDOM.style.display = 'block';
+
+			var support_ticket_update_element = document.querySelector('.supportticketupdates');
+
+			some_support_ticket.supportticketchanges = JSON.parse(some_support_ticket.supportticketchanges);
+
+			this.supportTicketChanges.push(some_support_ticket['supportticketchanges'][0]);
+
+			support_ticket_update_element.innerHTML += this.supportTicketUpdateElementData(0, 
+																						   some_support_ticket.supportticketchanges[0].lastupdated, 
+																						   true);
+
+			var support_ticket_changes_element = document.querySelector('.supportticketdetailsdisplay');
+
+			support_ticket_changes_element.innerHTML = this.supportTicketElementData(this.supportTicketChanges[0]);
+
+			var updated_support_ticket = this.supportTicketChanges[0];
+
+			var support_ticket_changes_box = this;
+
+			for(var i = 1; i < some_support_ticket.supportticketchanges.length; ++i){
+				if(some_support_ticket.supportticketchanges[i].lastupdated == null 
+				   || some_support_ticket.supportticketchanges[i].lastupdated == undefined) continue;
+			
+
+				for(var someotherattr in this.supportTicketChanges[i]){
+					updated_support_ticket[someotherattr] = some_support_ticket.supportticketchanges[i][someotherattr];
+				}
+
+				this.supportTicketChanges.push(updated_support_ticket);
+
+				support_ticket_update_element.innerHTML += this.supportTicketUpdateElementData(this.supportTicketChanges.length - 1, 
+																							   some_support_ticket.supportticketchanges[i].lastupdated, 
+																							   false);
+			}
+
+			document.querySelector('.supportticketchangesbacktext').onclick = function(){
+				support_ticket_changes_box.elementInDOM.style.display = 'none';
+				supportticketdetails.supportTicketDetails(some_support_ticket);
+			};
+		}
+	};
+
+	supportticketchanges.elementInDOM = document.querySelector('.supportticketchangesview');
+
+		</script>
+		<script src="http://localhost/helpdesk-master/PythonApplication2/templates/static/defaultuser/scripts/notificationview.js"></script>
+</html>

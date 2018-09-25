@@ -1,0 +1,103 @@
+<html lang="en">
+  <head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="781246595138-3dkh6d0uv6icr8nt2ndu6eg19bo3ke6b.apps.googleusercontent.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<style>
+		body{
+			background: #2c3849;
+			padding: 0;
+			margin: 0;
+		}
+		
+		.loginbuttonview{
+			height: 290px;
+			width: 90%;
+			max-width: 350px;
+			background: #f4f5f6;
+			position: absolute;
+			right: 0;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			display: block;
+			margin: auto;
+			border: 1px solid transparent;
+			border-radius: 9px;
+			text-align: center;
+			font-family: 'Raleway', sans-serif;
+			font-size: 14px;
+			color: #a09f9f;
+			-webkit-box-shadow: 0px 3px 39px 5px rgba(0,0,0,0.2);
+			-moz-box-shadow: 0px 3px 39px 5px rgba(0,0,0,0.2);
+			box-shadow: 0px 3px 39px 5px rgba(0,0,0,0.2);
+		}
+	
+		.loginbuttonview h1{
+			font-weight: 700;
+		}
+		
+		.loginbuttonview p{
+			font-weight: 500;
+		}
+		
+		.loginbuttonbox{
+			width: 198px;
+			display: block;
+			padding-top: 58px;
+			margin: auto;
+		}
+	</style> 
+ </head>
+  <body>
+	<script>
+	var initClient = function() {
+			gapi.load('auth2', function(){
+				auth2 = gapi.auth2.init({
+						client_id: '781246595138-3dkh6d0uv6icr8nt2ndu6eg19bo3ke6b.apps.googleusercontent.com'
+				}).then(function(){
+					window.location.href = '/';
+				});
+			});
+		};
+	
+    function onSignIn(googleUser) {
+		// Useful data for your client-side scripts:
+		var profile = googleUser.getBasicProfile();
+		console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+		console.log('Full Name: ' + profile.getName());
+		console.log('Given Name: ' + profile.getGivenName());
+		console.log('Family Name: ' + profile.getFamilyName());
+		console.log("Image URL: " + profile.getImageUrl());
+		console.log("Email: " + profile.getEmail());
+
+		// The ID token you need to pass to your backend:
+		var id_token = googleUser.getAuthResponse().id_token;
+		loginAuthenticate(id_token);
+		console.log("ID Token: " + id_token);
+	};
+
+
+	function loginAuthenticate(id_token){
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', '/login_request');
+		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		xhr.onload = function() {
+			console.log('Checked token')
+  			console.log(xhr.responseText)
+			window.location.replace(JSON.parse(xhr.response).pageurl)
+		};
+		xhr.send('id_token=' + id_token);
+	}
+    </script>
+	<div class="loginbuttonview">
+			<h1>Help Desk</h1>
+			<p>Please sign in with your ABA account</p>
+			<div class="loginbuttonbox">
+				<div class="g-signin2"  data-width="198" data-longtitle="true" data-onsuccess="onSignIn"></div>
+			</div>
+		</div>
+  </body>
+</html>
