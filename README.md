@@ -4,6 +4,6 @@ Screenshots:
 ![Delayed Support Ticket](https://raw.githubusercontent.com/adishy/aba/master/screenshots/delayed.jpg)
 ![View User Account](https://raw.githubusercontent.com/adishy/aba/master/screenshots/user.jpg)
 ![Ongoing Support Ticket](https://raw.githubusercontent.com/adishy/aba/master/screenshots/ongoing.jpg)
-![Sidebar](https://raw.githubusercontent.com/adishy/aba/master/screenshots/sidebar.jpg)
-![Mobile Page](https://raw.githubusercontent.com/adishy/aba/master/screenshots/mobile.jpg)
+![Sidebar](https://raw.githubusercontent.com/adishy/aba/master/screenshots/sidebar.PNG)
+![Mobile Page](https://raw.githubusercontent.com/adishy/aba/master/screenshots/mobile.PNG)
 
